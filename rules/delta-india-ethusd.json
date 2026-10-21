@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "exchange": "Delta Exchange India",
+  "product": {
+    "symbol": "ETHUSD",
+    "productId": 3136,
+    "contractType": "perpetual_futures",
+    "marginMode": "isolated",
+    "settlingAsset": "USD",
+    "contractValue": "0.01",
+    "contractUnit": "ETH",
+    "tickSizeUsd": "0.05",
+    "priceDecimals": 2,
+    "quantityDecimals": 2
+  },
+  "fees": {
+    "makerRate": "0.0002",
+    "takerRate": "0.0005",
+    "gstRate": "0.18",
+    "gstAppliesTo": "trading_fees_only",
+    "excluded": [
+      "scalper_offer",
+      "vip_or_promo_discounts",
+      "funding",
+      "settlement_fee",
+      "slippage"
+    ]
+  },
+  "margin": {
+    "initialMarginMinPct": "0.5",
+    "maintenanceMarginMinPct": "0.25",
+    "initialMarginScalingFactor": "0.000004",
+    "maintenanceMarginScalingFactor": "0.000002",
+    "maxLeverage": "200",
+    "leverageSliderValues": [
+      1,
+      2,
+      5,
+      10,
+      25,
+      50,
+      100,
+      200
+    ],
+    "flatMarginNotionalLimitUsd": "100000",
+    "flatMarginNotionalLimitBasis": "api_field:max_leverage_notional",
+    "note": "Help article 80001199736 says margin is flat up to a per-contract Position Threshold but gives no number; the limit here is the API field max_leverage_notional, not a documented threshold. v1 refuses to calculate above it. Lot sizing does not depend on it; only the margin estimate and leverage warning do.",
+    "isolatedLiquidationFeeRate": "0.001",
+    "isolatedLiquidationFeeNote": "API product_specs.isolated_liq_penalty_factor; equals the 'Liquidation Fee Rate in Isolated margin mode' listed in article 80001199736 (BTC 0.05%, ETH 0.10%, max-100x contracts 0.10%). Used by the leverage warning (PRD §7.6)."
+  },
+  "fx": {
+    "inrPerUsd": "85",
+    "note": "Delta India platform fixed rate for display/conversion"
+  },
+  "limits": {
+    "positionSizeLimitContracts": "162683",
+    "positionNotionalLimitUsd": "2500000"
+  },
+  "checkedAt": "2026-10-15T08:25:44Z",
+  "sources": [
+    {
+      "what": "product fields",
+      "url": "https://api.india.delta.exchange/v2/products/ETHUSD",
+      "raw": "rules/raw/delta-india-ETHUSD_2026-10-15T082544Z.json",
+      "sha256": "bccb5f6f2cd61783073d97748de83984eda128e61657656787440ab83ea369e3",
+      "checkedAt": "2026-10-15T08:25:44Z"
+    },
+    {
+      "what": "max leverage per contract (BTC/ETH 200x; SOL 100x)",
+      "url": "https://www.delta.exchange/support/solutions?articleId=80001220837",
+      "raw": "evidence/2026-10-15/multi-contract/help/80001220837.html",
+      "checkedAt": "2026-10-15T08:36:03Z"
+    },
+    {
+      "what": "isolated margin: flat below Position Threshold, linear above; isolated liquidation fee rates",
+      "url": "https://www.delta.exchange/support/solutions?articleId=80001199736",
+      "raw": "evidence/2026-10-15/multi-contract/help/80001199736.html",
+      "checkedAt": "2026-10-15T08:35:46Z"
+    },
+    {
+      "what": "USD-INR fixed rate 85",
+      "url": "https://www.delta.exchange/support/solutions?articleId=80001200076",
+      "raw": "evidence/2026-10-15/multi-contract/help/80001200076.html",
+      "checkedAt": "2026-10-15T08:35:54Z"
+    },
+    {
+      "what": "GST on trading fees",
+      "url": "https://www.delta.exchange/support/solutions?articleId=80001132759",
+      "raw": "evidence/2026-10-15/multi-contract/help/80001132759.html",
+      "checkedAt": "2026-10-15T08:35:57Z"
+    },
+    {
+      "what": "fee rates, 18% GST, calculator behaviour (official benchmark)",
+      "url": "https://www.delta.exchange/fees",
+      "raw": "evidence/2026-10-15/multi-contract/fee_bench_local_raw.json",
+      "doc": "docs/01-decision/测试基准_Delta官方费用计算器_2026-10-15.md §六",
+      "checkedAt": "2026-10-15"
+    }
+  ]
+}

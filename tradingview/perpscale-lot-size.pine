@@ -1,0 +1,62 @@
+// This Pine Script® code is subject to the terms of the MIT License.
+// PerpScale is an independent set of free calculators for Delta Exchange India perpetual futures. Not affiliated with Delta Exchange.
+// Same formula as https://perpscale.com/delta-exchange-lot-size-calculator — lots from ₹ risk and stop, fees + GST counted.
+//@version=5
+indicator("Delta Exchange Lot Size (₹ risk, fees + GST) – PerpScale", shorttitle="PerpScale Lots", overlay=true)
+
+// ---- Inputs ----
+riskInr   = input.float(2000, "Risk per trade (₹)", minval=1, group="Trade")
+side      = input.string("Long", "Side", options=["Long", "Short"], group="Trade")
+useClose  = input.bool(true, "Entry = last close", group="Trade")
+entryIn   = input.float(0.0, "Entry price (USD, if not last close)", minval=0, group="Trade")
+stopPrice = input.float(0.0, "Stop loss (USD)", minval=0, group="Trade")
+entryType = input.string("Taker", "Entry order", options=["Maker", "Taker"], group="Trade")
+stopType  = input.string("Taker", "Stop order", options=["Maker", "Taker"], group="Trade")
+
+contract  = input.string("BTCUSD", "Contract", options=["BTCUSD", "ETHUSD", "SOLUSD", "Custom"], group="Contract")
+customLot = input.float(1.0, "Custom: 1 lot (coins)", minval=0, group="Contract")
+customMk  = input.float(0.02, "Custom: maker fee %", minval=0, group="Contract")
+customTk  = input.float(0.05, "Custom: taker fee %", minval=0, group="Contract")
+gstPct    = input.float(18, "GST on fees %", minval=0, group="Delta India")
+inrPerUsd = input.float(85, "₹ per $ (Delta's fixed rate)", minval=1, group="Delta India")
+
+// Delta India rules, checked 2026-10-15 (perpscale.com/methodology). Check perpscale.com/delta-exchange-contract-specifications for other contracts.
+lotSize  = contract == "BTCUSD" ? 0.001 : contract == "ETHUSD" ? 0.01 : contract == "SOLUSD" ? 1.0 : customLot
+makerPct = contract == "Custom" ? customMk : 0.02
+takerPct = contract == "Custom" ? customTk : 0.05
+
+// ---- Maths (PerpScale formula) ----
+entry  = useClose ? close : entryIn
+rEntry = (entryType == "Maker" ? makerPct : takerPct) / 100
+rStop  = (stopType == "Maker" ? makerPct : takerPct) / 100
+gst    = gstPct / 100
+
+valid       = entry > 0 and stopPrice > 0 and lotSize > 0 and (side == "Long" ? stopPrice < entry : stopPrice > entry)
+perLotPrice = math.abs(entry - stopPrice) * lotSize
+perLotFees  = (entry * rEntry + stopPrice * rStop) * lotSize
+perLotLoss  = perLotPrice + perLotFees * (1 + gst)
+budgetUsd   = riskInr / inrPerUsd
+lots        = valid ? math.floor(budgetUsd / perLotLoss) : na
+lossInr     = valid ? lots * perLotLoss * inrPerUsd : na
+naiveLots   = valid ? math.floor(budgetUsd / perLotPrice) : na
+naiveLoss   = valid ? naiveLots * perLotLoss * inrPerUsd : na
+
+// ---- Output ----
+plot(valid ? stopPrice : na, "Stop", color=color.new(color.red, 0), style=plot.style_linebr)
+
+var table t = table.new(position.top_right, 2, 5, border_width=1)
+if barstate.islast
+    table.cell(t, 0, 0, "PerpScale · " + contract, text_color=color.white, bgcolor=color.new(color.blue, 30))
+    table.cell(t, 1, 0, side, text_color=color.white, bgcolor=color.new(color.blue, 30))
+    if valid
+        table.cell(t, 0, 1, "Lots (fees + GST)")
+        table.cell(t, 1, 1, str.tostring(lots))
+        table.cell(t, 0, 2, "Loss at stop")
+        table.cell(t, 1, 2, "₹" + str.tostring(lossInr, "#,##0.00"))
+        table.cell(t, 0, 3, "Price-only lots")
+        table.cell(t, 1, 3, str.tostring(naiveLots))
+        table.cell(t, 0, 4, "…would lose")
+        table.cell(t, 1, 4, "₹" + str.tostring(naiveLoss, "#,##0.00"))
+    else
+        table.cell(t, 0, 1, "Set a stop on the")
+        table.cell(t, 1, 1, side == "Long" ? "lower side" : "upper side")
