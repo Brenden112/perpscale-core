@@ -8,7 +8,7 @@ The calculation core behind [PerpScale](https://perpscale.com) — free lot size
 
 - **Lot size from risk** — how many lots to open so a stop-out costs at most your ₹ risk, with maker/taker fees and GST counted (`computeSizing`).
 - **Fees in rupees** — entry and exit fees, GST, breakeven and net P&L for a size you choose, by lots or by ₹ margin × leverage (`computeFees`).
-- **Contract rules** — lot size, tick, fee tier, leverage cap and limits for every live Delta India perpetual, snapshotted from Delta's public API (`rules/`).
+- **Contract rules** — lot size, tick, fee tier, leverage cap and limits for every live Delta India perpetual, snapshotted from Delta's public API (`rules/delta-india-contracts.json`, schemaVersion 2, sorted by symbol). Reference prices and 24h turnover, refreshed weekly, are in `rules/delta-india-market.json`; schemaVersion 1 of the contracts file had them inline as `refPrice` and `turnover24hUsd`.
 
 ## Formulas
 
@@ -61,6 +61,20 @@ See `example.ts` for a runnable version.
 ## Not included
 
 Funding, slippage, settlement fees, promotional discounts, cross/portfolio margin and Delta's exact liquidation price.
+
+## About PerpScale
+
+> PerpScale is an independent set of free calculators for Delta Exchange India perpetual futures. Not affiliated with Delta Exchange.
+
+PerpScale is built and run by one independent developer — not a company. It carries no referral links. The code in `src/` is copied unchanged from the site, so these are the same calculations that run on [perpscale.com](https://perpscale.com).
+
+How the numbers are checked:
+
+- **Against Delta's own calculator** — the 29 cases above, none off by more than $0.01.
+- **Contract specs, daily** — the site compares every live perpetual with Delta India's public API every day and logs each listing, delisting and spec change on [perpscale.com/delta-exchange-changes](https://perpscale.com/delta-exchange-changes). The `rules/` files here are a snapshot taken when this repo was last updated.
+- **Fee rules, by hand** — GST, the ₹/$ rate and the fee rules are checked against Delta's fee page and help centre; every source is listed on [perpscale.com/methodology](https://perpscale.com/methodology).
+
+Use it in the browser: [lot size calculator](https://perpscale.com/delta-exchange-lot-size-calculator) · [fee calculator](https://perpscale.com/delta-exchange-fee-calculator) · [methodology](https://perpscale.com/methodology).
 
 ## License
 

@@ -1,0 +1,1229 @@
+{
+  "schemaVersion": 1,
+  "exchange": "Delta Exchange India",
+  "checkedAt": "2026-10-29T07:36:42Z",
+  "specsCheck": {
+    "what": "live perpetual products",
+    "url": "https://api.india.delta.exchange/v2/products?contract_types=perpetual_futures&states=live&page_size=500",
+    "sha256": "c4c45c1552556a3803ff47a604af98d67bcd3ebab9bab32109587f1afc13bf5e",
+    "raw": "rules/raw/delta-india-products_2026-10-29T073642Z.json",
+    "checkedAt": "2026-10-29T07:36:42Z"
+  },
+  "sources": [
+    {
+      "what": "mark price and 24h turnover",
+      "url": "https://api.india.delta.exchange/v2/tickers?contract_types=perpetual_futures",
+      "sha256": "42556d62fba376513805ea217610bd472d6e91e0cbdfc8f37ca10ec8a7a9f1d4",
+      "raw": "rules/raw/delta-india-tickers_2026-10-29T073642Z.json",
+      "checkedAt": "2026-10-29T07:36:42Z"
+    }
+  ],
+  "count": 241,
+  "prices": [
+    {
+      "symbol": "1000BONKUSD",
+      "refPrice": "0.003019",
+      "turnover24hUsd": 17848
+    },
+    {
+      "symbol": "1000FLOKIUSD",
+      "refPrice": "0.02326",
+      "turnover24hUsd": 13454
+    },
+    {
+      "symbol": "1000PEPEUSD",
+      "refPrice": "0.0049784",
+      "turnover24hUsd": 999548
+    },
+    {
+      "symbol": "1000SATSUSD",
+      "refPrice": "0.00000989",
+      "turnover24hUsd": 29983
+    },
+    {
+      "symbol": "1000SHIBUSD",
+      "refPrice": "0.004838",
+      "turnover24hUsd": 16285
+    },
+    {
+      "symbol": "1MBABYDOGEUSD",
+      "refPrice": "0.0003425",
+      "turnover24hUsd": 10285
+    },
+    {
+      "symbol": "AAOIBUSD",
+      "refPrice": "79.57",
+      "turnover24hUsd": 382804
+    },
+    {
+      "symbol": "AAPLXUSD",
+      "refPrice": "347.28",
+      "turnover24hUsd": 91427
+    },
+    {
+      "symbol": "AAVEUSD",
+      "refPrice": "129.838",
+      "turnover24hUsd": 7253904
+    },
+    {
+      "symbol": "ACTUSD",
+      "refPrice": "0.008328",
+      "turnover24hUsd": 6307
+    },
+    {
+      "symbol": "ADAUSD",
+      "refPrice": "0.19757",
+      "turnover24hUsd": 606390
+    },
+    {
+      "symbol": "AIGENSYNUSD",
+      "refPrice": "0.01761",
+      "turnover24hUsd": 2437
+    },
+    {
+      "symbol": "AINUSD",
+      "refPrice": "0.14550",
+      "turnover24hUsd": 16237128
+    },
+    {
+      "symbol": "AIOTUSD",
+      "refPrice": "0.07118",
+      "turnover24hUsd": 61402
+    },
+    {
+      "symbol": "AIOUSD",
+      "refPrice": "0.03222",
+      "turnover24hUsd": 67105
+    },
+    {
+      "symbol": "AIXBTUSD",
+      "refPrice": "0.01778",
+      "turnover24hUsd": 2651
+    },
+    {
+      "symbol": "AKEUSD",
+      "refPrice": "0.0204448",
+      "turnover24hUsd": 15813485
+    },
+    {
+      "symbol": "ALLOUSD",
+      "refPrice": "0.1784",
+      "turnover24hUsd": 12778
+    },
+    {
+      "symbol": "ALTUSD",
+      "refPrice": "0.006444",
+      "turnover24hUsd": 170967
+    },
+    {
+      "symbol": "AMDBUSD",
+      "refPrice": "560.68",
+      "turnover24hUsd": 559148
+    },
+    {
+      "symbol": "AMZNXUSD",
+      "refPrice": "253.61",
+      "turnover24hUsd": 419682
+    },
+    {
+      "symbol": "API3USD",
+      "refPrice": "0.2523",
+      "turnover24hUsd": 6599
+    },
+    {
+      "symbol": "APTUSD",
+      "refPrice": "0.6561",
+      "turnover24hUsd": 53593
+    },
+    {
+      "symbol": "ARBUSD",
+      "refPrice": "0.16327",
+      "turnover24hUsd": 95876
+    },
+    {
+      "symbol": "ARCUSD",
+      "refPrice": "0.04772",
+      "turnover24hUsd": 210605
+    },
+    {
+      "symbol": "ARIAUSD",
+      "refPrice": "0.08685",
+      "turnover24hUsd": 1996605
+    },
+    {
+      "symbol": "ARKUSD",
+      "refPrice": "0.1649",
+      "turnover24hUsd": 25320
+    },
+    {
+      "symbol": "ARMBUSD",
+      "refPrice": "227.49",
+      "turnover24hUsd": 45601
+    },
+    {
+      "symbol": "ARUSD",
+      "refPrice": "3.366",
+      "turnover24hUsd": 33606
+    },
+    {
+      "symbol": "ASTERUSD",
+      "refPrice": "0.6993",
+      "turnover24hUsd": 8690
+    },
+    {
+      "symbol": "AUCTIONUSD",
+      "refPrice": "3.344",
+      "turnover24hUsd": 28663
+    },
+    {
+      "symbol": "AVAAIUSD",
+      "refPrice": "0.007144",
+      "turnover24hUsd": 17350
+    },
+    {
+      "symbol": "AVAXUSD",
+      "refPrice": "8.6608",
+      "turnover24hUsd": 1434749
+    },
+    {
+      "symbol": "AVGOBUSD",
+      "refPrice": "341.10",
+      "turnover24hUsd": 140263
+    },
+    {
+      "symbol": "AXSUSD",
+      "refPrice": "0.917",
+      "turnover24hUsd": 13310
+    },
+    {
+      "symbol": "BABABUSD",
+      "refPrice": "98.50",
+      "turnover24hUsd": 42169
+    },
+    {
+      "symbol": "BANKUSD",
+      "refPrice": "0.02664",
+      "turnover24hUsd": 66999
+    },
+    {
+      "symbol": "BASEDUSD",
+      "refPrice": "0.05218",
+      "turnover24hUsd": 18480
+    },
+    {
+      "symbol": "BBUSD",
+      "refPrice": "0.00763",
+      "turnover24hUsd": 24564
+    },
+    {
+      "symbol": "BCHUSD",
+      "refPrice": "279.40",
+      "turnover24hUsd": 2135872
+    },
+    {
+      "symbol": "BEATUSD",
+      "refPrice": "0.0890",
+      "turnover24hUsd": 2139768
+    },
+    {
+      "symbol": "BERAUSD",
+      "refPrice": "0.1464",
+      "turnover24hUsd": 9774
+    },
+    {
+      "symbol": "BILLUSD",
+      "refPrice": "0.00575",
+      "turnover24hUsd": 106813
+    },
+    {
+      "symbol": "BIOUSD",
+      "refPrice": "0.02185",
+      "turnover24hUsd": 13122
+    },
+    {
+      "symbol": "BLESSUSD",
+      "refPrice": "0.010037",
+      "turnover24hUsd": 14316666
+    },
+    {
+      "symbol": "BLURUSD",
+      "refPrice": "0.00824",
+      "turnover24hUsd": 1297016
+    },
+    {
+      "symbol": "BMTUSD",
+      "refPrice": "0.02660",
+      "turnover24hUsd": 591366
+    },
+    {
+      "symbol": "BNBUSD",
+      "refPrice": "748.805",
+      "turnover24hUsd": 2302905
+    },
+    {
+      "symbol": "BRUSD",
+      "refPrice": "0.48213",
+      "turnover24hUsd": 180927
+    },
+    {
+      "symbol": "BTCUSD",
+      "refPrice": "79852.5",
+      "turnover24hUsd": 1061188972
+    },
+    {
+      "symbol": "BTWUSD",
+      "refPrice": "1.7939",
+      "turnover24hUsd": 971998
+    },
+    {
+      "symbol": "BUSD",
+      "refPrice": "0.1360",
+      "turnover24hUsd": 32139
+    },
+    {
+      "symbol": "CAKEUSD",
+      "refPrice": "2.0420",
+      "turnover24hUsd": 33466
+    },
+    {
+      "symbol": "CAPUSD",
+      "refPrice": "0.07329",
+      "turnover24hUsd": 1144358
+    },
+    {
+      "symbol": "CBRSBUSD",
+      "refPrice": "109.60",
+      "turnover24hUsd": 576870
+    },
+    {
+      "symbol": "CHIPUSD",
+      "refPrice": "0.04750",
+      "turnover24hUsd": 203065
+    },
+    {
+      "symbol": "COAIUSD",
+      "refPrice": "0.2454",
+      "turnover24hUsd": 15907
+    },
+    {
+      "symbol": "COINXUSD",
+      "refPrice": "157.21",
+      "turnover24hUsd": 114899
+    },
+    {
+      "symbol": "COOKIEUSD",
+      "refPrice": "0.008620",
+      "turnover24hUsd": 14184
+    },
+    {
+      "symbol": "CRCLXUSD",
+      "refPrice": "79.38",
+      "turnover24hUsd": 259884
+    },
+    {
+      "symbol": "CROSSUSD",
+      "refPrice": "0.10780",
+      "turnover24hUsd": 73062
+    },
+    {
+      "symbol": "DASHUSD",
+      "refPrice": "50.71",
+      "turnover24hUsd": 108584
+    },
+    {
+      "symbol": "DEEPUSD",
+      "refPrice": "0.01628",
+      "turnover24hUsd": 1638
+    },
+    {
+      "symbol": "DOGEUSD",
+      "refPrice": "0.077852",
+      "turnover24hUsd": 2580411
+    },
+    {
+      "symbol": "DOGSUSD",
+      "refPrice": "0.00003430",
+      "turnover24hUsd": 6858
+    },
+    {
+      "symbol": "DOODUSD",
+      "refPrice": "0.001774",
+      "turnover24hUsd": 770515
+    },
+    {
+      "symbol": "DOTUSD",
+      "refPrice": "0.975",
+      "turnover24hUsd": 1356374
+    },
+    {
+      "symbol": "DRAMBUSD",
+      "refPrice": "51.96",
+      "turnover24hUsd": 449983
+    },
+    {
+      "symbol": "DUSKUSD",
+      "refPrice": "0.09396",
+      "turnover24hUsd": 160474
+    },
+    {
+      "symbol": "DYDXUSD",
+      "refPrice": "0.1071",
+      "turnover24hUsd": 2814
+    },
+    {
+      "symbol": "EDENUSD",
+      "refPrice": "0.05325",
+      "turnover24hUsd": 31367
+    },
+    {
+      "symbol": "EIGENUSD",
+      "refPrice": "0.1911",
+      "turnover24hUsd": 428677
+    },
+    {
+      "symbol": "ENAUSD",
+      "refPrice": "0.19561",
+      "turnover24hUsd": 194765
+    },
+    {
+      "symbol": "ENJUSD",
+      "refPrice": "0.02478",
+      "turnover24hUsd": 4345
+    },
+    {
+      "symbol": "ESPORTSUSD",
+      "refPrice": "0.00755",
+      "turnover24hUsd": 10311
+    },
+    {
+      "symbol": "ETCUSD",
+      "refPrice": "7.358",
+      "turnover24hUsd": 118696
+    },
+    {
+      "symbol": "ETHFIUSD",
+      "refPrice": "0.6432",
+      "turnover24hUsd": 32029
+    },
+    {
+      "symbol": "ETHUSD",
+      "refPrice": "2306.10",
+      "turnover24hUsd": 725239598
+    },
+    {
+      "symbol": "EVAAUSD",
+      "refPrice": "1.1972",
+      "turnover24hUsd": 63997727
+    },
+    {
+      "symbol": "EWYBUSD",
+      "refPrice": "161.14",
+      "turnover24hUsd": 252880
+    },
+    {
+      "symbol": "FARTCOINUSD",
+      "refPrice": "0.1272",
+      "turnover24hUsd": 60199
+    },
+    {
+      "symbol": "FFUSD",
+      "refPrice": "0.09440",
+      "turnover24hUsd": 15115
+    },
+    {
+      "symbol": "FILUSD",
+      "refPrice": "0.8737",
+      "turnover24hUsd": 207767
+    },
+    {
+      "symbol": "FRAXUSD",
+      "refPrice": "0.2459",
+      "turnover24hUsd": 18418
+    },
+    {
+      "symbol": "GALAUSD",
+      "refPrice": "0.001722",
+      "turnover24hUsd": 11997
+    },
+    {
+      "symbol": "GIGGLEUSD",
+      "refPrice": "30.85",
+      "turnover24hUsd": 38209
+    },
+    {
+      "symbol": "GLMUSD",
+      "refPrice": "0.10635",
+      "turnover24hUsd": 13807
+    },
+    {
+      "symbol": "GOATUSD",
+      "refPrice": "0.01370",
+      "turnover24hUsd": 7008
+    },
+    {
+      "symbol": "GOOGLXUSD",
+      "refPrice": "292.35",
+      "turnover24hUsd": 2378325
+    },
+    {
+      "symbol": "GRAMUSD",
+      "refPrice": "1.211",
+      "turnover24hUsd": 11957
+    },
+    {
+      "symbol": "GRIFFAINUSD",
+      "refPrice": "0.012900",
+      "turnover24hUsd": 1655400
+    },
+    {
+      "symbol": "GTCUSD",
+      "refPrice": "0.24065",
+      "turnover24hUsd": 358858
+    },
+    {
+      "symbol": "HANAUSD",
+      "refPrice": "0.01435",
+      "turnover24hUsd": 590064
+    },
+    {
+      "symbol": "HBARUSD",
+      "refPrice": "0.07342",
+      "turnover24hUsd": 66679
+    },
+    {
+      "symbol": "HIVEUSD",
+      "refPrice": "0.04733",
+      "turnover24hUsd": 373
+    },
+    {
+      "symbol": "HOODBUSD",
+      "refPrice": "89.32",
+      "turnover24hUsd": 2033744
+    },
+    {
+      "symbol": "HUSD",
+      "refPrice": "0.05674",
+      "turnover24hUsd": 406673
+    },
+    {
+      "symbol": "HYPEUSD",
+      "refPrice": "78.731",
+      "turnover24hUsd": 663517
+    },
+    {
+      "symbol": "INITUSD",
+      "refPrice": "0.20839",
+      "turnover24hUsd": 9758343
+    },
+    {
+      "symbol": "INJUSD",
+      "refPrice": "7.672",
+      "turnover24hUsd": 122406
+    },
+    {
+      "symbol": "INTCBUSD",
+      "refPrice": "92.34",
+      "turnover24hUsd": 478476
+    },
+    {
+      "symbol": "INUSD",
+      "refPrice": "0.02876",
+      "turnover24hUsd": 17507
+    },
+    {
+      "symbol": "IOSTUSD",
+      "refPrice": "0.0007721",
+      "turnover24hUsd": 79901
+    },
+    {
+      "symbol": "IOTAUSD",
+      "refPrice": "0.03988",
+      "turnover24hUsd": 2049
+    },
+    {
+      "symbol": "IOUSD",
+      "refPrice": "0.1443",
+      "turnover24hUsd": 33492
+    },
+    {
+      "symbol": "IRYSUSD",
+      "refPrice": "0.02207",
+      "turnover24hUsd": 1192528
+    },
+    {
+      "symbol": "JASMYUSD",
+      "refPrice": "0.003702",
+      "turnover24hUsd": 71822
+    },
+    {
+      "symbol": "JCTUSD",
+      "refPrice": "0.007172",
+      "turnover24hUsd": 3513639
+    },
+    {
+      "symbol": "JTOUSD",
+      "refPrice": "0.3971",
+      "turnover24hUsd": 60477
+    },
+    {
+      "symbol": "JUPUSD",
+      "refPrice": "0.2673",
+      "turnover24hUsd": 38719
+    },
+    {
+      "symbol": "KAITOUSD",
+      "refPrice": "0.2496",
+      "turnover24hUsd": 13306
+    },
+    {
+      "symbol": "KITEUSD",
+      "refPrice": "0.11182",
+      "turnover24hUsd": 47837
+    },
+    {
+      "symbol": "KORUBUSD",
+      "refPrice": "12.53",
+      "turnover24hUsd": 3037741
+    },
+    {
+      "symbol": "KSMUSD",
+      "refPrice": "3.626",
+      "turnover24hUsd": 20872
+    },
+    {
+      "symbol": "LABUSD",
+      "refPrice": "0.04596",
+      "turnover24hUsd": 813859
+    },
+    {
+      "symbol": "LAYERUSD",
+      "refPrice": "0.06254",
+      "turnover24hUsd": 1691
+    },
+    {
+      "symbol": "LDOUSD",
+      "refPrice": "0.3620",
+      "turnover24hUsd": 3639
+    },
+    {
+      "symbol": "LIGHTUSD",
+      "refPrice": "0.2459",
+      "turnover24hUsd": 108000
+    },
+    {
+      "symbol": "LINKUSD",
+      "refPrice": "11.385",
+      "turnover24hUsd": 1238633
+    },
+    {
+      "symbol": "LISTAUSD",
+      "refPrice": "0.07745",
+      "turnover24hUsd": 13004
+    },
+    {
+      "symbol": "LITEBUSD",
+      "refPrice": "952.96",
+      "turnover24hUsd": 1982942
+    },
+    {
+      "symbol": "LITUSD",
+      "refPrice": "2.8261",
+      "turnover24hUsd": 903593
+    },
+    {
+      "symbol": "LTCUSD",
+      "refPrice": "57.20",
+      "turnover24hUsd": 3719337
+    },
+    {
+      "symbol": "MANAUSD",
+      "refPrice": "0.0760",
+      "turnover24hUsd": 6079
+    },
+    {
+      "symbol": "MANTAUSD",
+      "refPrice": "0.06246",
+      "turnover24hUsd": 3319
+    },
+    {
+      "symbol": "MASKUSD",
+      "refPrice": "0.3887",
+      "turnover24hUsd": 2635
+    },
+    {
+      "symbol": "MELANIAUSD",
+      "refPrice": "0.0835",
+      "turnover24hUsd": 20949
+    },
+    {
+      "symbol": "MEMEUSD",
+      "refPrice": "0.0004633",
+      "turnover24hUsd": 5739
+    },
+    {
+      "symbol": "METAXUSD",
+      "refPrice": "619.22",
+      "turnover24hUsd": 604298
+    },
+    {
+      "symbol": "MEUSD",
+      "refPrice": "0.05919",
+      "turnover24hUsd": 5804
+    },
+    {
+      "symbol": "MMTUSD",
+      "refPrice": "0.1335",
+      "turnover24hUsd": 29279
+    },
+    {
+      "symbol": "MONUSD",
+      "refPrice": "0.02020",
+      "turnover24hUsd": 9224
+    },
+    {
+      "symbol": "MOODENGUSD",
+      "refPrice": "0.03684",
+      "turnover24hUsd": 3488
+    },
+    {
+      "symbol": "MOVEUSD",
+      "refPrice": "0.00647",
+      "turnover24hUsd": 7131
+    },
+    {
+      "symbol": "MOVRUSD",
+      "refPrice": "1.0818",
+      "turnover24hUsd": 36119
+    },
+    {
+      "symbol": "MRNABUSD",
+      "refPrice": "216.29",
+      "turnover24hUsd": 1268349
+    },
+    {
+      "symbol": "MRVLBUSD",
+      "refPrice": "229.79",
+      "turnover24hUsd": 445287
+    },
+    {
+      "symbol": "MSFTBUSD",
+      "refPrice": "552.27",
+      "turnover24hUsd": 593530
+    },
+    {
+      "symbol": "MSTRBUSD",
+      "refPrice": "140.45",
+      "turnover24hUsd": 155352
+    },
+    {
+      "symbol": "MUBARAKUSD",
+      "refPrice": "0.05108",
+      "turnover24hUsd": 72391
+    },
+    {
+      "symbol": "MUBUSD",
+      "refPrice": "950.22",
+      "turnover24hUsd": 422813
+    },
+    {
+      "symbol": "MUSD",
+      "refPrice": "1.0393",
+      "turnover24hUsd": 273534
+    },
+    {
+      "symbol": "NBISBUSD",
+      "refPrice": "169.64",
+      "turnover24hUsd": 543309
+    },
+    {
+      "symbol": "NEARUSD",
+      "refPrice": "4.3185",
+      "turnover24hUsd": 465370
+    },
+    {
+      "symbol": "NEIROUSD",
+      "refPrice": "0.00006627",
+      "turnover24hUsd": 1541
+    },
+    {
+      "symbol": "NMRUSD",
+      "refPrice": "9.838",
+      "turnover24hUsd": 4862
+    },
+    {
+      "symbol": "NOTUSD",
+      "refPrice": "0.0003731",
+      "turnover24hUsd": 13028
+    },
+    {
+      "symbol": "NVDAXUSD",
+      "refPrice": "213.24",
+      "turnover24hUsd": 385250
+    },
+    {
+      "symbol": "OILUSD",
+      "refPrice": "165.44",
+      "turnover24hUsd": 1188265
+    },
+    {
+      "symbol": "ONDOUSD",
+      "refPrice": "0.4058",
+      "turnover24hUsd": 78034
+    },
+    {
+      "symbol": "OPNUSD",
+      "refPrice": "0.04742",
+      "turnover24hUsd": 15758
+    },
+    {
+      "symbol": "OPUSD",
+      "refPrice": "0.1078",
+      "turnover24hUsd": 13443
+    },
+    {
+      "symbol": "ORCLBUSD",
+      "refPrice": "141.85",
+      "turnover24hUsd": 671784
+    },
+    {
+      "symbol": "ORDERUSD",
+      "refPrice": "0.03395",
+      "turnover24hUsd": 179844
+    },
+    {
+      "symbol": "ORDIUSD",
+      "refPrice": "3.546",
+      "turnover24hUsd": 22470
+    },
+    {
+      "symbol": "PARTIUSD",
+      "refPrice": "0.03873",
+      "turnover24hUsd": 44972
+    },
+    {
+      "symbol": "PAXGUSD",
+      "refPrice": "4029.81",
+      "turnover24hUsd": 153372235
+    },
+    {
+      "symbol": "PENDLEUSD",
+      "refPrice": "1.9012",
+      "turnover24hUsd": 53871
+    },
+    {
+      "symbol": "PENGUUSD",
+      "refPrice": "0.007580",
+      "turnover24hUsd": 27373
+    },
+    {
+      "symbol": "PEOPLEUSD",
+      "refPrice": "0.00748",
+      "turnover24hUsd": 3917
+    },
+    {
+      "symbol": "PIEVERSEUSD",
+      "refPrice": "0.9848",
+      "turnover24hUsd": 31835
+    },
+    {
+      "symbol": "PIPPINUSD",
+      "refPrice": "0.01549",
+      "turnover24hUsd": 56209
+    },
+    {
+      "symbol": "PIUSD",
+      "refPrice": "0.0765",
+      "turnover24hUsd": 7340
+    },
+    {
+      "symbol": "PLTRBUSD",
+      "refPrice": "196.03",
+      "turnover24hUsd": 73320
+    },
+    {
+      "symbol": "PNUTUSD",
+      "refPrice": "0.04058",
+      "turnover24hUsd": 1680
+    },
+    {
+      "symbol": "POLUSD",
+      "refPrice": "0.09055",
+      "turnover24hUsd": 10304
+    },
+    {
+      "symbol": "POPCATUSD",
+      "refPrice": "0.04161",
+      "turnover24hUsd": 76908
+    },
+    {
+      "symbol": "PROVEUSD",
+      "refPrice": "0.1932",
+      "turnover24hUsd": 1868
+    },
+    {
+      "symbol": "PUMPUSD",
+      "refPrice": "0.004204",
+      "turnover24hUsd": 78044
+    },
+    {
+      "symbol": "QNTUSD",
+      "refPrice": "191.62",
+      "turnover24hUsd": 784896
+    },
+    {
+      "symbol": "QQQXUSD",
+      "refPrice": "715.74",
+      "turnover24hUsd": 2247093
+    },
+    {
+      "symbol": "RAREUSD",
+      "refPrice": "0.01209",
+      "turnover24hUsd": 18238
+    },
+    {
+      "symbol": "RAVEUSD",
+      "refPrice": "0.1473",
+      "turnover24hUsd": 23789
+    },
+    {
+      "symbol": "REDUSD",
+      "refPrice": "0.1462",
+      "turnover24hUsd": 35847
+    },
+    {
+      "symbol": "RIVERUSD",
+      "refPrice": "1.005",
+      "turnover24hUsd": 198707
+    },
+    {
+      "symbol": "RKLBBUSD",
+      "refPrice": "57.26",
+      "turnover24hUsd": 101809
+    },
+    {
+      "symbol": "RLCUSD",
+      "refPrice": "0.5001",
+      "turnover24hUsd": 25030
+    },
+    {
+      "symbol": "RSRUSD",
+      "refPrice": "0.001572",
+      "turnover24hUsd": 10394
+    },
+    {
+      "symbol": "RUNEUSD",
+      "refPrice": "0.6040",
+      "turnover24hUsd": 13944
+    },
+    {
+      "symbol": "SAGAUSD",
+      "refPrice": "0.01787",
+      "turnover24hUsd": 22347
+    },
+    {
+      "symbol": "SAHARAUSD",
+      "refPrice": "0.00786",
+      "turnover24hUsd": 8645
+    },
+    {
+      "symbol": "SEIUSD",
+      "refPrice": "0.05130",
+      "turnover24hUsd": 17410
+    },
+    {
+      "symbol": "SIGNUSD",
+      "refPrice": "0.010504",
+      "turnover24hUsd": 2775
+    },
+    {
+      "symbol": "SIRENUSD",
+      "refPrice": "0.02325",
+      "turnover24hUsd": 104397
+    },
+    {
+      "symbol": "SKHYBUSD",
+      "refPrice": "160.86",
+      "turnover24hUsd": 954775
+    },
+    {
+      "symbol": "SKLUSD",
+      "refPrice": "0.00393",
+      "turnover24hUsd": 1738
+    },
+    {
+      "symbol": "SKYAIUSD",
+      "refPrice": "0.03415",
+      "turnover24hUsd": 341859
+    },
+    {
+      "symbol": "SLVONUSD",
+      "refPrice": "47.96",
+      "turnover24hUsd": 13787956
+    },
+    {
+      "symbol": "SNDKBUSD",
+      "refPrice": "1353.30",
+      "turnover24hUsd": 5385211
+    },
+    {
+      "symbol": "SOLUSD",
+      "refPrice": "99.8101",
+      "turnover24hUsd": 146068860
+    },
+    {
+      "symbol": "SOLVUSD",
+      "refPrice": "0.004638",
+      "turnover24hUsd": 551335
+    },
+    {
+      "symbol": "SONICUSD",
+      "refPrice": "0.02106",
+      "turnover24hUsd": 1515
+    },
+    {
+      "symbol": "SOONUSD",
+      "refPrice": "0.3090",
+      "turnover24hUsd": 55934
+    },
+    {
+      "symbol": "SOPHUSD",
+      "refPrice": "0.001431",
+      "turnover24hUsd": 91563
+    },
+    {
+      "symbol": "SOXLBUSD",
+      "refPrice": "98.62",
+      "turnover24hUsd": 3338825
+    },
+    {
+      "symbol": "SPCXXUSD",
+      "refPrice": "143.59",
+      "turnover24hUsd": 1409292
+    },
+    {
+      "symbol": "SPXUSD",
+      "refPrice": "0.3910",
+      "turnover24hUsd": 14914
+    },
+    {
+      "symbol": "SPYXUSD",
+      "refPrice": "767.71",
+      "turnover24hUsd": 503376
+    },
+    {
+      "symbol": "STBLUSD",
+      "refPrice": "0.02702",
+      "turnover24hUsd": 23715
+    },
+    {
+      "symbol": "STRKUSD",
+      "refPrice": "0.04551",
+      "turnover24hUsd": 347558
+    },
+    {
+      "symbol": "STXUSD",
+      "refPrice": "0.2807",
+      "turnover24hUsd": 14905
+    },
+    {
+      "symbol": "SUIUSD",
+      "refPrice": "0.9075",
+      "turnover24hUsd": 321915
+    },
+    {
+      "symbol": "SUNUSD",
+      "refPrice": "0.016198",
+      "turnover24hUsd": 3751
+    },
+    {
+      "symbol": "SUSD",
+      "refPrice": "0.04399",
+      "turnover24hUsd": 9630
+    },
+    {
+      "symbol": "SUSHIUSD",
+      "refPrice": "0.1989",
+      "turnover24hUsd": 4091
+    },
+    {
+      "symbol": "SWARMSUSD",
+      "refPrice": "0.006153",
+      "turnover24hUsd": 3270
+    },
+    {
+      "symbol": "TACUSD",
+      "refPrice": "0.001159",
+      "turnover24hUsd": 43556
+    },
+    {
+      "symbol": "TAOUSD",
+      "refPrice": "247.43",
+      "turnover24hUsd": 123873
+    },
+    {
+      "symbol": "TIAUSD",
+      "refPrice": "0.5167",
+      "turnover24hUsd": 203675
+    },
+    {
+      "symbol": "TLMUSD",
+      "refPrice": "0.001182",
+      "turnover24hUsd": 5304
+    },
+    {
+      "symbol": "TNSRUSD",
+      "refPrice": "0.02953",
+      "turnover24hUsd": 14384
+    },
+    {
+      "symbol": "TOWNSUSD",
+      "refPrice": "0.001412",
+      "turnover24hUsd": 4481
+    },
+    {
+      "symbol": "TRBUSD",
+      "refPrice": "16.552",
+      "turnover24hUsd": 19700
+    },
+    {
+      "symbol": "TRUMPUSD",
+      "refPrice": "1.672",
+      "turnover24hUsd": 44046
+    },
+    {
+      "symbol": "TRXUSD",
+      "refPrice": "0.33120",
+      "turnover24hUsd": 47977
+    },
+    {
+      "symbol": "TSLAXUSD",
+      "refPrice": "401.51",
+      "turnover24hUsd": 1125198
+    },
+    {
+      "symbol": "TSMBUSD",
+      "refPrice": "428.79",
+      "turnover24hUsd": 62499
+    },
+    {
+      "symbol": "TSTUSD",
+      "refPrice": "0.014251",
+      "turnover24hUsd": 11122
+    },
+    {
+      "symbol": "UNIUSD",
+      "refPrice": "6.9939",
+      "turnover24hUsd": 4880862
+    },
+    {
+      "symbol": "USUALUSD",
+      "refPrice": "0.01026",
+      "turnover24hUsd": 3774
+    },
+    {
+      "symbol": "VANAUSD",
+      "refPrice": "0.8393",
+      "turnover24hUsd": 9122
+    },
+    {
+      "symbol": "VELVETUSD",
+      "refPrice": "0.0590",
+      "turnover24hUsd": 83574
+    },
+    {
+      "symbol": "VIRTUALUSD",
+      "refPrice": "0.6013",
+      "turnover24hUsd": 11167
+    },
+    {
+      "symbol": "VVVUSD",
+      "refPrice": "23.433",
+      "turnover24hUsd": 623526
+    },
+    {
+      "symbol": "WCTUSD",
+      "refPrice": "0.03468",
+      "turnover24hUsd": 1922
+    },
+    {
+      "symbol": "WDCBUSD",
+      "refPrice": "382.29",
+      "turnover24hUsd": 662901
+    },
+    {
+      "symbol": "WIFUSD",
+      "refPrice": "0.1776",
+      "turnover24hUsd": 20223
+    },
+    {
+      "symbol": "WLDUSD",
+      "refPrice": "0.4121",
+      "turnover24hUsd": 177410
+    },
+    {
+      "symbol": "WLFIUSD",
+      "refPrice": "0.0513",
+      "turnover24hUsd": 5860
+    },
+    {
+      "symbol": "XAIUSD",
+      "refPrice": "0.007497",
+      "turnover24hUsd": 3181
+    },
+    {
+      "symbol": "XANUSD",
+      "refPrice": "0.010079",
+      "turnover24hUsd": 5561176
+    },
+    {
+      "symbol": "XAUTUSD",
+      "refPrice": "4031.22",
+      "turnover24hUsd": 854574928
+    },
+    {
+      "symbol": "XLMUSD",
+      "refPrice": "0.16765",
+      "turnover24hUsd": 2877
+    },
+    {
+      "symbol": "XMRUSD",
+      "refPrice": "592.06",
+      "turnover24hUsd": 138067
+    },
+    {
+      "symbol": "XPLUSD",
+      "refPrice": "0.0743",
+      "turnover24hUsd": 13160
+    },
+    {
+      "symbol": "XRPUSD",
+      "refPrice": "1.2916",
+      "turnover24hUsd": 12016036
+    },
+    {
+      "symbol": "ZECUSD",
+      "refPrice": "1236.42",
+      "turnover24hUsd": 9339728
+    },
+    {
+      "symbol": "ZENUSD",
+      "refPrice": "5.707",
+      "turnover24hUsd": 4563
+    },
+    {
+      "symbol": "ZKUSD",
+      "refPrice": "0.01137",
+      "turnover24hUsd": 17937
+    },
+    {
+      "symbol": "ZORAUSD",
+      "refPrice": "0.006307",
+      "turnover24hUsd": 13982
+    },
+    {
+      "symbol": "ZROUSD",
+      "refPrice": "1.6104",
+      "turnover24hUsd": 31245
+    }
+  ]
+}

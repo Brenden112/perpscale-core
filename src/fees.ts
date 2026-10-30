@@ -1,9 +1,13 @@
 // Fee & brokerage calculator core (plan 1.1). Pure functions, decimal.js only, same input rules as sizing.ts.
 import Decimal from "decimal.js"
 import type { ContractRule } from "./contracts"
+import { scalperWindowMinutes } from "./scalper"
 import { feeRate, type FeeType, parseInput, type Side } from "./sizing"
 
 export type SizeMode = "lots" | "margin"
+
+/** "on" = Scalper Offer: the closing fee is waived (BTCUSD, ETHUSD, SOLUSD only, see scalper.ts). "" = standard fees. */
+export type ScalperMode = "" | "on"
 
 /** Raw form values; empty string means "not entered". */
 export type FeeInput = {
@@ -16,6 +20,7 @@ export type FeeInput = {
   entryFee: FeeType
   exit: string
   exitFee: FeeType
+  scalper?: ScalperMode
 }
 
 export type FeeField = "lots" | "marginInr" | "leverage" | "entry" | "exit"
@@ -45,6 +50,10 @@ export type FeeResult = {
   totalInr: Decimal
   /** fees + GST as % of the margin posted */
   pctOfMargin: Decimal
+  /** true when the Scalper Offer was switched on for a contract it is modelled for: the exit fee is 0 */
+  scalperApplied: boolean
+  /** exit fee + its GST that the offer waived; 0 when it is not applied */
+  scalperSavedUsd: Decimal
   breakevenPrice: Decimal
   breakevenPoints: Decimal
   pnl: { grossUsd: Decimal; netUsd: Decimal; netInr: Decimal } | null
@@ -58,12 +67,23 @@ export type FeeOutcome =
   | { status: "ok"; result: FeeResult }
 
 const ONE = new Decimal(1)
+const ZERO = new Decimal(0)
 
-/** Breakeven exit price with both legs' fees + GST (PRD §7.5, with the exit fee type chosen by the user). */
-export function breakevenFor(rule: ContractRule, side: Side, entry: Decimal, entryFee: FeeType, exitFee: FeeType) {
+/**
+ * Breakeven exit price with both legs' fees + GST (PRD §7.5, with the exit fee type chosen by the user).
+ * `exitWaived` is the Scalper Offer: no closing fee, so only the entry fee has to be earned back.
+ */
+export function breakevenFor(
+  rule: ContractRule,
+  side: Side,
+  entry: Decimal,
+  entryFee: FeeType,
+  exitFee: FeeType,
+  exitWaived = false
+) {
   const k = ONE.plus(rule.gstRate)
   const rE = feeRate(rule, entryFee).times(k)
-  const rX = feeRate(rule, exitFee).times(k)
+  const rX = exitWaived ? ZERO : feeRate(rule, exitFee).times(k)
   return side === "long" ? entry.times(ONE.plus(rE)).div(ONE.minus(rX)) : entry.times(ONE.minus(rE)).div(ONE.plus(rX))
 }
 
@@ -132,12 +152,14 @@ export function computeFees(input: FeeInput, rule: ContractRule): FeeOutcome {
   const quantity = c.times(lots)
   const exitPrice = exit ?? entry
   const entryFeeUsd = entry.times(quantity).times(feeRate(rule, input.entryFee))
-  const exitFeeUsd = exitPrice.times(quantity).times(feeRate(rule, input.exitFee))
+  const scalperApplied = input.scalper === "on" && scalperWindowMinutes(rule.symbol) !== undefined
+  const standardExitFeeUsd = exitPrice.times(quantity).times(feeRate(rule, input.exitFee))
+  const exitFeeUsd = scalperApplied ? ZERO : standardExitFeeUsd
   const gstUsd = entryFeeUsd.plus(exitFeeUsd).times(rule.gstRate)
   const totalUsd = entryFeeUsd.plus(exitFeeUsd).plus(gstUsd)
   const notionalUsd = quantity.times(entry)
   const marginUsd = notionalUsd.div(leverage)
-  const be = breakevenFor(rule, input.side, entry, input.entryFee, input.exitFee)
+  const be = breakevenFor(rule, input.side, entry, input.entryFee, input.exitFee, scalperApplied)
 
   let pnl: FeeResult["pnl"] = null
   if (exit) {
@@ -163,6 +185,8 @@ export function computeFees(input: FeeInput, rule: ContractRule): FeeOutcome {
       totalUsd,
       totalInr: totalUsd.times(fx),
       pctOfMargin: totalUsd.div(marginUsd).times(100),
+      scalperApplied,
+      scalperSavedUsd: scalperApplied ? standardExitFeeUsd.times(ONE.plus(rule.gstRate)) : ZERO,
       breakevenPrice: be,
       breakevenPoints: be.minus(entry).abs(),
       pnl,

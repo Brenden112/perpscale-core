@@ -23,7 +23,10 @@ export type ContractRule = {
   name: string
   /** true for the three hand-checked, benchmarked contracts (SYMBOLS) */
   verified: boolean
-  /** Snapshot mark price on the tick grid, for examples and reference tables only; null if the API had none */
+  /**
+   * Snapshot mark price on the tick grid, refreshed weekly (rules/delta-india-market.json); for examples and
+   * reference tables only; null if the API had none
+   */
   refPrice: string | null
   productId: number
   contractValue: string
